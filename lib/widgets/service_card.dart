@@ -25,7 +25,7 @@ class _ServiceCardState extends State<ServiceCard> {
         children: [
           Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.secondary,
                   border: Border.all(width: 0.8, color: Colors.amber),
                   borderRadius: BorderRadius.circular(5),
                   boxShadow: [
@@ -72,7 +72,7 @@ class _ServiceCardState extends State<ServiceCard> {
                                     'Guia Turistico',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 13),
+                                        fontSize: 15),
                                   ),
                                   SizedBox(
                                     width: 5,
@@ -104,7 +104,7 @@ class _ServiceCardState extends State<ServiceCard> {
                                   Text(
                                     'PACO',
                                     style: TextStyle(
-                                        fontSize: 9,
+                                        fontSize: 10,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   SizedBox(
@@ -114,7 +114,7 @@ class _ServiceCardState extends State<ServiceCard> {
                                     '● Viajes Y Turismo',
                                     style: TextStyle(
                                         fontSize: 9,
-                                        color: Colors.black38,
+                                        color: Theme.of(context).hintColor,
                                         fontWeight: FontWeight.w600),
                                   ),
                                 ],
@@ -127,13 +127,13 @@ class _ServiceCardState extends State<ServiceCard> {
                                   Icon(
                                     Icons.location_on,
                                     size: 18,
-                                    color: Colors.black12,
+                                    color: Theme.of(context).hintColor,
                                   ),
                                   Text(
                                     'Pontevedra, provincia , España',
                                     style: TextStyle(
                                       fontSize: 10,
-                                      color: Colors.black54,
+                                      color: Theme.of(context).hintColor,
                                     ),
                                   ),
                                 ],
@@ -147,18 +147,17 @@ class _ServiceCardState extends State<ServiceCard> {
                         children: [
                           Row(
                             children: [
-                              Image.asset(
-                                "assets/icons/chat.png",
-                                height: 16,
-                                width: 16,
-                              ),
+                              Image.asset("assets/icons/chat.png",
+                                  height: 16,
+                                  width: 16,
+                                  color: Theme.of(context).splashColor),
                               SizedBox(
                                 width: 5,
                               ),
                               Icon(
                                 Icons.favorite_outline,
                                 size: 18,
-                                color: Color.fromARGB(255, 219, 219, 219),
+                                color: Theme.of(context).hintColor,
                               )
                             ],
                           ),
@@ -173,31 +172,36 @@ class _ServiceCardState extends State<ServiceCard> {
                                 height: 12,
                               ),
                               Text(
-                                '5.0',
+                                ' 5.0 ',
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 252, 199, 42),
-                                    fontSize: 11),
+                                    fontSize: 12),
                               ),
                               Text(
                                 '(2)',
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 188, 188, 188),
-                                    fontSize: 11),
+                                    fontSize: 12),
                               ),
                             ],
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 20,
                           ),
                           Row(
                             children: [
                               Text(
                                 '35.00\€',
                                 style: TextStyle(
-                                    color: Color.fromARGB(255, 9, 124, 225),
-                                    fontWeight: FontWeight.w600),
+                                    fontSize: 16,
+                                    color:
+                                        Theme.of(context).colorScheme.tertiary,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ],
+                          ),
+                          SizedBox(
+                            height: 8,
                           ),
                         ],
                       )
@@ -206,13 +210,13 @@ class _ServiceCardState extends State<ServiceCard> {
                 ],
               )),
           Positioned(
-              left: 370,
+              left: MediaQuery.of(context).size.width - 23,
               top: 70,
               child: Container(
                 height: 24,
                 width: 7,
                 decoration: BoxDecoration(
-                    color: primaryColor,
+                    color: Theme.of(context).colorScheme.tertiary,
                     borderRadius: BorderRadius.circular(15)),
               ))
         ],

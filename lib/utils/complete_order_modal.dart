@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 Widget Complete(BuildContext context) {
   return Container(
+    color: Theme.of(context).primaryColor,
     height: 300,
     padding: EdgeInsets.only(top: 16, left: 28, right: 28),
     child: Column(
@@ -47,7 +48,8 @@ Widget Complete(BuildContext context) {
           height: 40,
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25), color: primaryColor),
+              borderRadius: BorderRadius.circular(25),
+              color: Theme.of(context).colorScheme.primary),
           child: Center(
               child: Text(
             "Complete",

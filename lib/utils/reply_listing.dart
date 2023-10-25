@@ -7,6 +7,7 @@ Future? openDialog1(BuildContext context) {
     builder: (context) => StatefulBuilder(
       builder: (context, setState) => SimpleDialog(
         insetPadding: EdgeInsets.symmetric(horizontal: 10),
+        backgroundColor: Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,7 +97,7 @@ Future? openDialog1(BuildContext context) {
                         width: 200,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: primaryColor),
+                            color: Theme.of(context).colorScheme.primary),
                         child: Center(
                             child: Text(
                           "Reply",

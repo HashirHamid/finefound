@@ -19,6 +19,7 @@ class ChatCard extends StatelessWidget {
     return GestureDetector(
       onTap: function,
       child: ListTile(
+        tileColor: Theme.of(context).primaryColor,
         contentPadding: EdgeInsets.all(1),
         visualDensity: VisualDensity.compact,
         titleAlignment: ListTileTitleAlignment.titleHeight,

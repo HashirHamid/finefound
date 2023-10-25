@@ -21,7 +21,7 @@ class OfferCard extends StatelessWidget {
       height: 90,
       margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 236, 244, 250),
+          color: Theme.of(context).indicatorColor,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
               width: 1, color: const Color.fromARGB(255, 215, 237, 255))),
@@ -50,12 +50,12 @@ class OfferCard extends StatelessWidget {
                   Icon(
                     Icons.check,
                     size: 20,
-                    color: primaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   Text(
                     "Accept Offer",
                     style: TextStyle(
-                        color: primaryColor,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w600),
                   )
@@ -67,7 +67,7 @@ class OfferCard extends StatelessWidget {
                 Text(
                   price,
                   style: TextStyle(
-                      color: primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 12,
                       fontWeight: FontWeight.w600),
                 ),
@@ -78,7 +78,7 @@ class OfferCard extends StatelessWidget {
                   height: 22,
                   width: 3,
                   decoration: BoxDecoration(
-                      color: primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           bottomLeft: Radius.circular(10))),
@@ -91,7 +91,10 @@ class OfferCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 15.0),
           child: GestureDetector(
             onTap: view,
-            child: Image.asset("assets/icons/view.png"),
+            child: Image.asset(
+              "assets/icons/view.png",
+              color: Theme.of(context).hintColor,
+            ),
           ),
         )
       ]),

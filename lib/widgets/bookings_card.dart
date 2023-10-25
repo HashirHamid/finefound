@@ -24,7 +24,7 @@ class BookingsCard extends StatelessWidget {
             height: 100,
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
                 boxShadow: [
                   BoxShadow(
                       offset: Offset(6, 4),
@@ -84,6 +84,7 @@ class BookingsCard extends StatelessWidget {
                       'assets/icons/exp.png',
                       height: 18,
                       width: 18,
+                      color: Theme.of(context).hintColor,
                       fit: BoxFit.scaleDown,
                     ),
                     SizedBox(
@@ -112,7 +113,9 @@ class BookingsCard extends StatelessWidget {
                     Text(
                       '35.00\€',
                       style: TextStyle(
-                          color: primaryColor, fontWeight: FontWeight.w600),
+                          color: Theme.of(context).colorScheme.tertiary,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 )
@@ -120,13 +123,13 @@ class BookingsCard extends StatelessWidget {
             ),
           ),
           Positioned(
-              left: 359.5,
+              left: MediaQuery.of(context).size.width - 33,
               top: 65,
               child: Container(
                 height: 24,
                 width: 7,
                 decoration: BoxDecoration(
-                    color: primaryColor,
+                    color: Theme.of(context).colorScheme.tertiary,
                     borderRadius: BorderRadius.circular(15)),
               ))
         ],

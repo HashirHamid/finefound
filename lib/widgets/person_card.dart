@@ -23,7 +23,8 @@ class _PersonCardState extends State<PersonCard> {
         children: [
           Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.secondary,
+                  border: Border.all(color: Colors.white, width: 1),
                   borderRadius: BorderRadius.circular(5),
                   boxShadow: [
                     BoxShadow(
@@ -77,13 +78,13 @@ class _PersonCardState extends State<PersonCard> {
                                   Icon(
                                     Icons.location_on,
                                     size: 18,
-                                    color: Colors.black12,
+                                    color: Theme.of(context).hintColor,
                                   ),
                                   Text(
                                     'Pontevedra, provincia , España',
                                     style: TextStyle(
                                       fontSize: 10,
-                                      color: Colors.black54,
+                                      color: Theme.of(context).hintColor,
                                     ),
                                   ),
                                 ],
@@ -97,7 +98,10 @@ class _PersonCardState extends State<PersonCard> {
                                   Wrap(
                                     crossAxisAlignment: WrapCrossAlignment.end,
                                     children: [
-                                      Image.asset("assets/icons/urgent.png"),
+                                      Image.asset(
+                                        "assets/icons/urgent.png",
+                                        color: Theme.of(context).hintColor,
+                                      ),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -113,7 +117,10 @@ class _PersonCardState extends State<PersonCard> {
                                   Wrap(
                                     crossAxisAlignment: WrapCrossAlignment.end,
                                     children: [
-                                      Image.asset("assets/icons/calendarp.png"),
+                                      Image.asset(
+                                        "assets/icons/calendarp.png",
+                                        color: Theme.of(context).hintColor,
+                                      ),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -129,7 +136,10 @@ class _PersonCardState extends State<PersonCard> {
                                   Wrap(
                                     crossAxisAlignment: WrapCrossAlignment.end,
                                     children: [
-                                      Image.asset("assets/icons/time.png"),
+                                      Image.asset(
+                                        "assets/icons/time.png",
+                                        color: Theme.of(context).hintColor,
+                                      ),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -151,6 +161,7 @@ class _PersonCardState extends State<PersonCard> {
                         children: [
                           Image.asset(
                             "assets/icons/chat.png",
+                            color: Theme.of(context).splashColor,
                             height: 16,
                             width: 16,
                           ),
@@ -160,8 +171,8 @@ class _PersonCardState extends State<PersonCard> {
                           Text(
                             '35.00\€',
                             style: TextStyle(
-                                fontSize: 12,
-                                color: Color.fromARGB(255, 9, 124, 225),
+                                fontSize: 14,
+                                color: Theme.of(context).colorScheme.tertiary,
                                 fontWeight: FontWeight.w600),
                           ),
                         ],
@@ -177,7 +188,7 @@ class _PersonCardState extends State<PersonCard> {
                 height: 24,
                 width: 7,
                 decoration: BoxDecoration(
-                    color: primaryColor,
+                    color: Theme.of(context).colorScheme.tertiary,
                     borderRadius: BorderRadius.circular(15)),
               ))
         ],

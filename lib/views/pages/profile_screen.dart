@@ -1,9 +1,11 @@
+import 'package:finefound/provider/dark_theme_provider.dart';
 import 'package:finefound/utils/payment.dart';
 import 'package:finefound/views/pages/filter_screen.dart';
 import 'package:finefound/widgets/profile_option.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   final VoidCallback func1;
   final VoidCallback func;
   final VoidCallback func2;
@@ -14,6 +16,11 @@ class ProfileScreen extends StatelessWidget {
       this.func1, this.func, this.func2, this.func3, this.func4, this.func5);
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
@@ -21,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            color: Color.fromARGB(255, 255, 255, 255)),
+            color: Theme.of(context).colorScheme.background),
         // color: Colors.red,
         width: double.infinity,
         child: SingleChildScrollView(
@@ -35,16 +42,16 @@ class ProfileScreen extends StatelessWidget {
               height: 10,
             ),
             ProfileOpt("assets/icons/dash.png", "Dashboard", () {
-              func3();
+              widget.func3();
             }),
             ProfileOpt("assets/icons/Filter.png", "Listing", () {
-              func4();
+              widget.func4();
             }),
             ProfileOpt("assets/icons/cal.png", "Calender", () {
-              func2();
+              widget.func2();
             }),
             ProfileOpt("assets/icons/Group.png", "Orders", () {
-              func5();
+              widget.func5();
             }),
             SizedBox(
               height: 10,
@@ -57,13 +64,13 @@ class ProfileScreen extends StatelessWidget {
               height: 10,
             ),
             ProfileOpt("assets/icons/settings.png", "Setting", () {
-              func();
+              widget.func();
             }),
             ProfileOpt("assets/icons/noti.png", "Notifications", () {}),
             ProfileOpt("assets/icons/Outlined.png", "Payment Method", () {
               // Navigator.of(context).push(MaterialPageRoute(
               //     builder: (context) => paymentModal(context)));
-              func1();
+              widget.func1();
             }),
             ProfileOpt("assets/icons/sun.png", "Dark Mode", () {}),
             Text(

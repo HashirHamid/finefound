@@ -14,7 +14,7 @@ class MessageScreen extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            color: Color.fromARGB(255, 255, 255, 255)),
+            color: Theme.of(context).colorScheme.background),
         // color: Colors.red,
         width: double.infinity,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

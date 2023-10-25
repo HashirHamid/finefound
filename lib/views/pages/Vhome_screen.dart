@@ -1,4 +1,5 @@
 import 'package:finefound/constants/colors.dart';
+import 'package:finefound/utils/theme_data.dart';
 import 'package:finefound/views/pages/filter_screen.dart';
 import 'package:finefound/widgets/person_card.dart';
 import 'package:finefound/widgets/service_card.dart';
@@ -23,7 +24,7 @@ class _VHomeScreenState extends State<VHomeScreen> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-              color: Color.fromARGB(255, 255, 255, 255)),
+              color: Theme.of(context).colorScheme.secondary),
           // color: Colors.red,
           width: double.infinity,
           // height: 700,
@@ -341,38 +342,40 @@ class _VHomeScreenState extends State<VHomeScreen> {
                             'Servicios',
                             //  : 'PETICIONES',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
+                                fontSize: 18, fontWeight: FontWeight.w600),
                           )
                         : Text(
                             'PETICIONES',
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
+                                fontSize: 18, fontWeight: FontWeight.w600),
                           ),
                     Row(
                       children: [
                         Text(
                           "SORT BY",
-                          style: TextStyle(fontSize: 10),
+                          style: TextStyle(fontSize: 11),
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Container(
-                          width: 90,
-                          height: 30,
+                          width: 80,
+                          height: 25,
                           margin: EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
                               border: Border.all(
-                                  width: 1, color: Colors.grey.shade200)),
+                                  width: 1, color: Colors.grey.shade400)),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton(
                                 padding: EdgeInsets.only(left: 10),
                                 elevation: 0,
                                 icon: Icon(Icons.keyboard_arrow_down,
-                                    color: Color.fromARGB(221, 90, 90, 90)),
+                                    color: Theme.of(context).hintColor),
                                 style: TextStyle(
                                     fontSize: 11,
-                                    color: Color.fromARGB(221, 95, 95, 95)),
+                                    color: Theme.of(context).hintColor),
                                 onChanged: (val) {},
                                 items: [DropdownMenuItem(child: Text('DATE'))]),
                           ),
@@ -382,7 +385,7 @@ class _VHomeScreenState extends State<VHomeScreen> {
                   ],
                 ),
                 Container(
-                    height: 500,
+                    height: 550,
                     width: double.infinity,
                     child: widget.flag
                         ? ListView.builder(

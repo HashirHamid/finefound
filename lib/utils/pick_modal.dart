@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
   return Container(
     height: 200,
+    color: Theme.of(context).primaryColor,
     padding: EdgeInsets.only(top: 16, left: 24, right: 24),
     child: Column(
       children: [
@@ -25,6 +26,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
                   Image.asset(
                     'assets/icons/list.png',
                     height: 30,
+                    color: Theme.of(context).splashColor,
                     width: 30,
                   ),
                   SizedBox(
@@ -33,7 +35,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
                   Text(
                     "List A Service",
                     style: TextStyle(
-                        color: Color.fromARGB(255, 1, 32, 57),
+                        color: Theme.of(context).splashColor,
                         fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -41,7 +43,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
               Icon(
                 Icons.keyboard_arrow_right,
                 size: 40,
-                color: Color.fromARGB(255, 1, 32, 57),
+                color: Theme.of(context).splashColor,
               )
             ],
           ),
@@ -61,6 +63,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
                     'assets/icons/post.png',
                     height: 30,
                     width: 30,
+                    color: Theme.of(context).splashColor,
                   ),
                   SizedBox(
                     width: 20,
@@ -68,7 +71,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
                   Text(
                     "Post A Request",
                     style: TextStyle(
-                        color: Color.fromARGB(255, 1, 32, 57),
+                        color: Theme.of(context).splashColor,
                         fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -76,7 +79,7 @@ Widget Pick(BuildContext context, VoidCallback list, VoidCallback post) {
               Icon(
                 Icons.keyboard_arrow_right,
                 size: 40,
-                color: Color.fromARGB(255, 1, 32, 57),
+                color: Theme.of(context).splashColor,
               )
             ],
           ),

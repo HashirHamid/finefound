@@ -18,9 +18,10 @@ class _paymentModalState extends State<paymentModal> {
         child: Container(
       padding: EdgeInsets.only(top: 20, left: 18, right: 15),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-          color: Color.fromARGB(255, 255, 255, 255)),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+        color: Theme.of(context).primaryColor,
+      ),
       // color: Colors.red,
       width: double.infinity,
       child: SingleChildScrollView(

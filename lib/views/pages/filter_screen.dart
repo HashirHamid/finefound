@@ -211,7 +211,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           width: 200,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              color: primaryColor),
+                              color: Theme.of(context).colorScheme.primary),
                           child: Center(
                               child: Text(
                             "Filter",

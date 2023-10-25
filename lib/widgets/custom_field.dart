@@ -24,7 +24,7 @@ class CustomField extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-              color: Color.fromARGB(255, 1, 73, 132),
+              color: Theme.of(context).secondaryHeaderColor,
               fontSize: 13,
               fontWeight: FontWeight.w500),
         ),
@@ -42,7 +42,7 @@ class CustomField extends StatelessWidget {
             decoration: InputDecoration(
               contentPadding: EdgeInsets.only(top: 2, left: 12),
 
-              fillColor: Color.fromARGB(255, 255, 255, 255),
+              fillColor: Theme.of(context).primaryColor,
               filled: true,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey.shade300),

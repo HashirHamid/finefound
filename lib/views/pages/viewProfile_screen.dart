@@ -13,7 +13,7 @@ class ViewProfile extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20)),
-                color: Color.fromARGB(255, 255, 255, 255)),
+                color: Theme.of(context).colorScheme.background),
             // color: Colors.red,
             width: double.infinity,
             // height: 700,
@@ -50,6 +50,7 @@ class ViewProfile extends StatelessWidget {
                                   "assets/icons/location.png",
                                   height: 15,
                                   width: 15,
+                                  color: Theme.of(context).hintColor,
                                 ),
                                 SizedBox(
                                   width: 10,
@@ -115,6 +116,7 @@ class ViewProfile extends StatelessWidget {
                                         "assets/icons/titul.png",
                                         width: 20,
                                         height: 20,
+                                        color: Theme.of(context).hintColor,
                                       ),
                                       SizedBox(
                                         width: 5,
@@ -123,7 +125,7 @@ class ViewProfile extends StatelessWidget {
                                         "4 Titulaciones",
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black54,
+                                          color: Theme.of(context).hintColor,
                                         ),
                                       )
                                     ],
@@ -136,6 +138,7 @@ class ViewProfile extends StatelessWidget {
                                       Image.asset(
                                         "assets/icons/professional.png",
                                         width: 20,
+                                        color: Theme.of(context).hintColor,
                                         height: 20,
                                       ),
                                       SizedBox(
@@ -145,7 +148,7 @@ class ViewProfile extends StatelessWidget {
                                         "Professional",
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black54,
+                                          color: Theme.of(context).hintColor,
                                         ),
                                       )
                                     ],
@@ -162,6 +165,7 @@ class ViewProfile extends StatelessWidget {
                                       Image.asset(
                                         "assets/icons/Disp.png",
                                         width: 20,
+                                        color: Theme.of(context).hintColor,
                                         height: 20,
                                       ),
                                       SizedBox(
@@ -171,7 +175,7 @@ class ViewProfile extends StatelessWidget {
                                         "Disponible",
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black54,
+                                          color: Theme.of(context).hintColor,
                                         ),
                                       )
                                     ],
@@ -185,6 +189,7 @@ class ViewProfile extends StatelessWidget {
                                       Image.asset(
                                         "assets/icons/7an.png",
                                         width: 20,
+                                        color: Theme.of(context).hintColor,
                                         height: 20,
                                       ),
                                       SizedBox(
@@ -194,7 +199,7 @@ class ViewProfile extends StatelessWidget {
                                         "7 Anos",
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black54,
+                                          color: Theme.of(context).hintColor,
                                         ),
                                       )
                                     ],
@@ -218,6 +223,7 @@ class ViewProfile extends StatelessWidget {
                                     Image.asset(
                                       'assets/icons/chat.png',
                                       width: 25,
+                                      color: Theme.of(context).hintColor,
                                       height: 25,
                                     ),
                                     SizedBox(
@@ -226,7 +232,8 @@ class ViewProfile extends StatelessWidget {
                                     Text(
                                       "Send Message",
                                       style: TextStyle(
-                                          color: Colors.black54, fontSize: 13),
+                                          color: Theme.of(context).hintColor,
+                                          fontSize: 13),
                                     )
                                   ],
                                 ),
@@ -239,7 +246,7 @@ class ViewProfile extends StatelessWidget {
                                       blurRadius: 25,
                                       color: Colors.grey.shade300)
                                 ],
-                                color: Color.fromARGB(255, 255, 255, 255),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           SizedBox(
@@ -263,7 +270,7 @@ class ViewProfile extends StatelessWidget {
                             height: 26,
                             width: 3,
                             decoration: BoxDecoration(
-                                color: primaryColor,
+                                color: Theme.of(context).colorScheme.primary,
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(15),
                                     bottomRight: Radius.circular(15))),
@@ -281,11 +288,14 @@ class ViewProfile extends StatelessWidget {
                               blurRadius: 25,
                               color: Colors.grey.shade300)
                         ],
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(12)),
                     child: Text(
                       "Paco Remera Díaz es un peluquero profesional con 7 años de experienciaen el campo. Cuenta con cuatrotitulaciones de renombre en distintos cursos de peluquería, lo que demuestra su compromiso con la educacióncontinua y la excelencia en su trabajo.",
-                      style: TextStyle(fontSize: 11, color: Colors.black54),
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Theme.of(context).hintColor,
+                      ),
                     ),
                   )
                 ],

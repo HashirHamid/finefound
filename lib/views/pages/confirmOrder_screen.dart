@@ -13,7 +13,7 @@ class ConfirmOrder extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-          color: Color.fromARGB(255, 255, 255, 255)),
+          color: Theme.of(context).colorScheme.background),
       // color: Colors.red,
       width: double.infinity,
       // height: 700,
@@ -48,6 +48,7 @@ class ConfirmOrder extends StatelessWidget {
                   'assets/icons/chat.png',
                   height: 27,
                   width: 27,
+                  color: Theme.of(context).hintColor,
                 ),
               ],
             ),
@@ -59,10 +60,12 @@ class ConfirmOrder extends StatelessWidget {
                 Text(
                   'Placed On:  ',
                   style: TextStyle(
-                      fontWeight: FontWeight.w600, color: Colors.black54),
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(context).splashColor),
                 ),
                 Text("28-07-2023",
-                    style: TextStyle(fontSize: 13, color: Colors.black54))
+                    style: TextStyle(
+                        fontSize: 13, color: Theme.of(context).splashColor))
               ],
             ),
             SizedBox(
@@ -72,9 +75,11 @@ class ConfirmOrder extends StatelessWidget {
               children: [
                 Text('Purchased From:  ',
                     style: TextStyle(
-                        fontWeight: FontWeight.w600, color: Colors.black54)),
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).splashColor)),
                 Text("Barber",
-                    style: TextStyle(fontSize: 13, color: Colors.black54))
+                    style: TextStyle(
+                        fontSize: 13, color: Theme.of(context).splashColor))
               ],
             ),
             SizedBox(
@@ -98,7 +103,7 @@ class ConfirmOrder extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: Theme.of(context).splashColor),
                 ),
                 Text(
                   '\$3720.27',
@@ -117,7 +122,7 @@ class ConfirmOrder extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: Theme.of(context).splashColor),
                 ),
                 Text(
                   '-\$749.99',
@@ -136,7 +141,7 @@ class ConfirmOrder extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: Theme.of(context).splashColor),
                 ),
                 Text(
                   '\$259.99',
@@ -148,7 +153,8 @@ class ConfirmOrder extends StatelessWidget {
               onTap: () {},
               child: Text(
                 "Remove",
-                style: TextStyle(color: primaryColor, fontSize: 10),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary, fontSize: 10),
               ),
             ),
             SizedBox(
@@ -162,7 +168,7 @@ class ConfirmOrder extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: Theme.of(context).splashColor),
                 ),
                 Text(
                   '\$0.00',
@@ -181,7 +187,7 @@ class ConfirmOrder extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: Theme.of(context).splashColor),
                 ),
                 Text(
                   '\$228.72',
@@ -234,6 +240,7 @@ class ConfirmOrder extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/icons/location.png',
+                  color: Theme.of(context).hintColor,
                   height: 18,
                 ),
                 SizedBox(
@@ -255,7 +262,7 @@ class ConfirmOrder extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/icons/home.png',
-                  color: Colors.grey,
+                  color: Theme.of(context).hintColor,
                   height: 18,
                 ),
                 SizedBox(
@@ -276,6 +283,7 @@ class ConfirmOrder extends StatelessWidget {
             Wrap(
               children: [
                 Image.asset(
+                  color: Theme.of(context).hintColor,
                   'assets/icons/phone.png',
                   height: 18,
                 ),
@@ -297,6 +305,7 @@ class ConfirmOrder extends StatelessWidget {
             Wrap(
               children: [
                 Image.asset(
+                  color: Theme.of(context).hintColor,
                   'assets/icons/mail1.png',
                   height: 15,
                 ),
@@ -351,7 +360,7 @@ class ConfirmOrder extends StatelessWidget {
                     width: 140,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: primaryColor),
+                        color: Theme.of(context).colorScheme.primary),
                     child: Center(
                         child: Text(
                       "Complete Order",

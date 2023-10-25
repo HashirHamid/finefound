@@ -90,6 +90,7 @@
 // }
 
 import 'package:finefound/constants/colors.dart';
+import 'package:finefound/provider/dark_theme_provider.dart';
 import 'package:finefound/utils/payment.dart';
 import 'package:finefound/utils/pick_modal.dart';
 import 'package:finefound/views/pages/Vhome_screen.dart';
@@ -109,6 +110,7 @@ import 'package:finefound/views/pages/settings_screen.dart';
 import 'package:finefound/views/pages/viewProfile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   final List<BottomNavigationBarItem> items;
@@ -140,7 +142,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           height: 60,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15), topRight: Radius.circular(15)),
           ),
@@ -189,7 +191,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             width: 60,
             height: 60,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.circular(40),
             ),
           ),
@@ -201,7 +203,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             width: 60,
             height: 60,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.circular(40),
             ),
           ),
@@ -235,7 +237,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 size: 40,
               ),
               decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.circular(40),
                   boxShadow: [
                     BoxShadow(
@@ -386,10 +388,12 @@ class _MyAppState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = Provider.of<DarkThemeProvider>(context);
     return SafeArea(
         child: Scaffold(
+            backgroundColor: Theme.of(context).colorScheme.secondary,
             appBar: AppBar(
-              backgroundColor: primaryColor,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               elevation: 0,
               toolbarHeight: 0,
             ),
@@ -417,8 +421,7 @@ class _MyAppState extends State<MyHome> {
               },
             ),
             body: Container(
-                padding: EdgeInsets.only(top: 20),
-                color: primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 child: Column(children: [
                   Container(
                       padding:
@@ -469,7 +472,8 @@ class _MyAppState extends State<MyHome> {
                                 height: 28,
                                 width: 65,
                                 decoration: BoxDecoration(
-                                    color: primaryColor,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                     boxShadow: [
                                       BoxShadow(
                                           offset: Offset(1, 4),
@@ -496,7 +500,9 @@ class _MyAppState extends State<MyHome> {
                                                   BorderRadius.circular(20),
                                               color: widget.flag
                                                   ? Colors.white
-                                                  : primaryColor),
+                                                  : Theme.of(context)
+                                                      .colorScheme
+                                                      .primary),
                                           child: Image.asset(
                                             widget.flag
                                                 ? 'assets/icons/search.png'
@@ -518,7 +524,9 @@ class _MyAppState extends State<MyHome> {
                                             borderRadius:
                                                 BorderRadius.circular(20),
                                             color: widget.flag
-                                                ? primaryColor
+                                                ? Theme.of(context)
+                                                    .colorScheme
+                                                    .primary
                                                 : Colors.white,
                                           ),
                                           child: Image.asset(widget.flag
@@ -541,8 +549,7 @@ class _MyAppState extends State<MyHome> {
                                     decoration: InputDecoration(
                                       contentPadding: EdgeInsets.only(top: 2),
 
-                                      fillColor:
-                                          Color.fromARGB(255, 255, 255, 255),
+                                      fillColor: Colors.white,
                                       filled: true,
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide.none,
@@ -552,9 +559,8 @@ class _MyAppState extends State<MyHome> {
                                       // labelText: 'Enter your name',
                                       hintText: 'location or keywords',
                                       hintStyle: TextStyle(
-                                          fontSize: 13,
-                                          color: Color.fromARGB(
-                                              255, 171, 171, 171)),
+                                        fontSize: 13,
+                                      ),
                                       // icon: Icon(Icons.person),
                                       suffixIcon: GestureDetector(
                                         onTap: () {

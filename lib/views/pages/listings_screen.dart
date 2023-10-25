@@ -14,7 +14,7 @@ class ListingsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20)),
-                color: Color.fromARGB(255, 255, 255, 255)),
+                color: Theme.of(context).colorScheme.background),
             // color: Colors.red,
             width: double.infinity,
             // height: 700,
@@ -44,7 +44,7 @@ class ListingsScreen extends StatelessWidget {
                         width: 210,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: primaryColor),
+                            color: Theme.of(context).colorScheme.primary),
                         child: Center(
                             child: Text(
                           "Import Listing",

@@ -1,11 +1,13 @@
 import 'package:finefound/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-Widget reviewModal() {
+Widget reviewModal(BuildContext context) {
   return Container(
     height: 300,
     padding: EdgeInsets.only(top: 18, left: 20, right: 20, bottom: 10),
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(25),
+    ),
     child: Column(children: [
       Text(
         "Write a Review",
@@ -78,7 +80,8 @@ Widget reviewModal() {
           height: 50,
           width: 300,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25), color: primaryColor),
+              borderRadius: BorderRadius.circular(25),
+              color: Theme.of(context).colorScheme.primary),
           child: Center(
               child: Text(
             "Submit Review",

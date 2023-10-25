@@ -1,8 +1,10 @@
 import 'package:finefound/constants/colors.dart';
+import 'package:finefound/provider/dark_theme_provider.dart';
 import 'package:finefound/utils/booking_confirmed.dart';
 import 'package:finefound/widgets/custom_field.dart';
 import 'package:finefound/widgets/payment_options.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CheckOutScreen extends StatelessWidget {
   final VoidCallback function;
@@ -15,7 +17,7 @@ class CheckOutScreen extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            color: Color.fromARGB(255, 255, 255, 255)),
+            color: Theme.of(context).colorScheme.background),
         // color: Colors.red,
         width: double.infinity,
         child: SingleChildScrollView(
@@ -110,7 +112,6 @@ class CheckOutScreen extends StatelessWidget {
               Divider(
                 height: 1,
                 thickness: 7,
-                color: Colors.grey.shade300,
               ),
               Padding(
                 padding:
@@ -201,7 +202,6 @@ class CheckOutScreen extends StatelessWidget {
               Divider(
                 height: 1,
                 thickness: 7,
-                color: Colors.grey.shade300,
               ),
               Padding(
                 padding:
@@ -254,15 +254,16 @@ class CheckOutScreen extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            placeOrder(context, () {
-                              function();
-                            });
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PlaceOrder(() {
+                                      function();
+                                    })));
                           },
                           child: Container(
                             width: 130,
                             height: 40,
                             decoration: BoxDecoration(
-                                color: primaryColor,
+                                color: Theme.of(context).colorScheme.primary,
                                 borderRadius: BorderRadius.circular(35)),
                             child: Center(
                                 child: Text(
@@ -277,7 +278,11 @@ class CheckOutScreen extends StatelessWidget {
                           width: 120,
                           height: 40,
                           decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
+                              color: Provider.of<DarkThemeProvider>(context)
+                                          .themeMode ==
+                                      ThemeMode.dark
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade300,
                               borderRadius: BorderRadius.circular(35)),
                           child: Center(
                               child: Text(

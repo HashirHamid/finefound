@@ -8,6 +8,7 @@ Future? booking(BuildContext context, VoidCallback function) {
     builder: (context) => StatefulBuilder(
       builder: (context, setState) => SimpleDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        backgroundColor: Theme.of(context).primaryColor,
         insetPadding: EdgeInsets.symmetric(
           horizontal: 5,
         ),
@@ -54,13 +55,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                         Text(
                           "Date: ",
                           style: TextStyle(
-                              color: Colors.black54,
+                              color: Theme.of(context).hintColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 12),
                         ),
                         Text(
                           "28-07-2023",
-                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                          style: TextStyle(
+                              color: Theme.of(context).hintColor, fontSize: 12),
                         )
                       ],
                     ),
@@ -72,13 +74,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                         Text(
                           "Time: ",
                           style: TextStyle(
-                              color: Colors.black54,
+                              color: Theme.of(context).hintColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 12),
                         ),
                         Text(
                           "9:00PM-9:30PM",
-                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                          style: TextStyle(
+                              color: Theme.of(context).hintColor, fontSize: 12),
                         )
                       ],
                     )
@@ -94,13 +97,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                         Text(
                           "Amount: ",
                           style: TextStyle(
-                              color: Colors.black54,
+                              color: Theme.of(context).hintColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 12),
                         ),
                         Text(
                           "200",
-                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                          style: TextStyle(
+                              color: Theme.of(context).hintColor, fontSize: 12),
                         )
                       ],
                     ),
@@ -112,13 +116,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                         Text(
                           "Package: ",
                           style: TextStyle(
-                              color: Colors.black54,
+                              color: Theme.of(context).hintColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 12),
                         ),
                         Text(
                           "BASIC",
-                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                          style: TextStyle(
+                              color: Theme.of(context).hintColor, fontSize: 12),
                         )
                       ],
                     )
@@ -161,13 +166,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                     Text(
                       "Customer Note: ",
                       style: TextStyle(
-                          color: Colors.black54,
+                          color: Theme.of(context).hintColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 12),
                     ),
                     Text(
                       "28-07-2023",
-                      style: TextStyle(color: Colors.black54, fontSize: 12),
+                      style: TextStyle(
+                          color: Theme.of(context).hintColor, fontSize: 12),
                     )
                   ],
                 ),
@@ -179,13 +185,14 @@ Future? booking(BuildContext context, VoidCallback function) {
                     Text(
                       "Booking Note: ",
                       style: TextStyle(
-                          color: Colors.black54,
+                          color: Theme.of(context).hintColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 12),
                     ),
                     Text(
                       "Lorem Ibsum",
-                      style: TextStyle(color: Colors.black54, fontSize: 12),
+                      style: TextStyle(
+                          color: Theme.of(context).hintColor, fontSize: 12),
                     )
                   ],
                 ),
@@ -225,7 +232,7 @@ Future? booking(BuildContext context, VoidCallback function) {
                         width: 120,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: primaryColor),
+                            color: Theme.of(context).colorScheme.primary),
                         child: Center(
                             child: Text(
                           "View",

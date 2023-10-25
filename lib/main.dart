@@ -1,36 +1,46 @@
+import 'package:finefound/provider/auth.dart';
+import 'package:finefound/provider/dark_theme_provider.dart';
+import 'package:finefound/utils/theme_data.dart';
 import 'package:finefound/views/pages/authHome_screen.dart';
+import 'package:finefound/views/pages/navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MediaQuery(
-      data: MediaQueryData(),
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            fontFamily: "Poppins",
-            // This is the theme of your application.
-            //
-            // Try running your application with "flutter run". You'll see the
-            // application has a blue toolbar. Then, without quitting the app, try
-            // changing the primarySwatch below to Colors.green and then invoke
-            // "hot reload" (press "r" in the console where you ran "flutter run",
-            // or simply save your changes to "hot reload" in a Flutter IDE).
-            // Notice that the counter didn't reset back to zero; the application
-            // is not restarted.
-            primarySwatch: Colors.blue,
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<DarkThemeProvider>(
+            create: (_) {
+              return DarkThemeProvider();
+            },
           ),
-          home: AuthHomeScreen()),
-    );
+          ChangeNotifierProvider<Auth>(create: (_) => Auth()),
+        ],
+        child: Consumer<DarkThemeProvider>(builder: (context, value, child) {
+          return Consumer<Auth>(
+              builder: (context, auth, _) => MaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    title: 'Flutter Demo',
+                    darkTheme: darkTheme,
+                    theme: lightTheme,
+                    themeMode: value.themeMode,
+                    home: MyHome(),
+                  )
+              // auth.isAuth ? MyHome() : AuthHomeScreen()),
+              );
+        }));
   }
 }

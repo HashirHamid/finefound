@@ -40,6 +40,7 @@ Future? orderNow(BuildContext context, VoidCallback func) {
     context: context,
     builder: (context) => StatefulBuilder(
       builder: (context, setState) => SimpleDialog(
+        backgroundColor: Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         insetPadding: EdgeInsets.symmetric(horizontal: 10),
         title: Row(
@@ -143,6 +144,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[0],
                                 onChanged: (value) {
                                   setState(() {
@@ -156,6 +159,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[1],
                                 onChanged: (value) {
                                   setState(() {
@@ -174,6 +179,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[2],
                                 onChanged: (value) {
                                   setState(() {
@@ -187,6 +194,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[3],
                                 onChanged: (value) {
                                   setState(() {
@@ -205,6 +214,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[4],
                                 onChanged: (value) {
                                   setState(() {
@@ -218,6 +229,8 @@ Future? orderNow(BuildContext context, VoidCallback func) {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.grey,
                                 value: _selectedServices[5],
                                 onChanged: (value) {
                                   setState(() {

@@ -1,4 +1,6 @@
+import 'package:finefound/provider/dark_theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileOpt extends StatefulWidget {
   final String icon;
@@ -16,6 +18,7 @@ class _ProfileOptState extends State<ProfileOpt> {
 
   @override
   Widget build(BuildContext context) {
+    final _darkTheme = Provider.of<DarkThemeProvider>(context);
     return GestureDetector(
       onTap: widget.function,
       child: Padding(
@@ -31,6 +34,7 @@ class _ProfileOptState extends State<ProfileOpt> {
                     width: 22,
                     child: Image.asset(
                       widget.icon,
+                      color: Theme.of(context).splashColor,
                       fit: BoxFit.fill,
                     )),
                 SizedBox(
@@ -44,11 +48,11 @@ class _ProfileOptState extends State<ProfileOpt> {
             ),
             widget.title == 'Dark Mode'
                 ? Switch(
-                    value: val,
+                    activeColor: Theme.of(context).colorScheme.primary,
+                    value: _darkTheme.themeMode == ThemeMode.dark,
                     onChanged: (v) {
-                      setState(() {
-                        val = v;
-                      });
+                      print(v);
+                      _darkTheme.toggleTheme(v);
                     },
                   )
                 : widget.title == 'Help' || widget.title == 'Legal'

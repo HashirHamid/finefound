@@ -9,6 +9,7 @@ Future? makeOffer(BuildContext context) {
     builder: (context) => StatefulBuilder(
       builder: (context, setState) => SimpleDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        backgroundColor: Theme.of(context).primaryColor,
         insetPadding: EdgeInsets.symmetric(horizontal: 10),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,7 +86,7 @@ Future? makeOffer(BuildContext context) {
                       width: 230,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
-                          color: primaryColor),
+                          color: Theme.of(context).colorScheme.primary),
                       child: Center(
                           child: Text(
                         "Submit Offer",
@@ -109,6 +110,7 @@ Future? submmitted(BuildContext context) {
       context: context,
       builder: (context) => StatefulBuilder(
           builder: (context, setState) => SimpleDialog(
+                  backgroundColor: Theme.of(context).colorScheme.background,
                   insetPadding: EdgeInsets.symmetric(horizontal: 3),
                   children: [
                     SimpleDialogOption(
